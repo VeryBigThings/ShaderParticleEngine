@@ -1,17 +1,20 @@
 {
   "name": "shader-particle-engine",
   "description": "A GLSL-focused particle engine for THREE.js.",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "author": "Luke Moody (https://github.com/squarefeet/)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/squarefeet/ShaderParticleEngine.git"
+    "url": "git+https://github.com/VeryBigThings/ShaderParticleEngine.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@VeryBigThings"
   },
   "bugs": {
-    "url": "https://github.com/squarefeet/ShaderParticleEngine/issues"
+    "url": "https://github.com/VeryBigThings/ShaderParticleEngine/issues"
   },
-  "homepage": "https://github.com/squarefeet/ShaderParticleEngine/",
+  "homepage": "https://github.com/VeryBigThings/ShaderParticleEngine/",
   "keywords": [
     "three.js",
     "webgl",
@@ -37,6 +40,6 @@
     "example": "examples"
   },
   "dependencies": {
-    "three": "^0.84.0"
+    "three": "^0.112.1"
   }
 }

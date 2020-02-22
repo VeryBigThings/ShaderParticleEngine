@@ -119,7 +119,7 @@ SPE.Group = function( options ) {
 
     // Map of uniforms to be applied to the ShaderMaterial instance.
     this.uniforms = {
-        texture: {
+        textureUniform: {
             type: 't',
             value: this.texture
         },
@@ -134,7 +134,7 @@ SPE.Group = function( options ) {
         },
         fogColor: {
             type: 'c',
-            value: null
+            value: this.fog ? new THREE.Color() : null
         },
         fogNear: {
             type: 'f',

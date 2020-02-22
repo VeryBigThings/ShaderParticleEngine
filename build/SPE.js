@@ -1,4 +1,4 @@
-/* shader-particle-engine 1.0.6
+/* shader-particle-engine 1.0.7
  * 
  * (c) 2015 Luke Moody (http://www.github.com/squarefeet)
  *     Originally based on Lee Stemkoski's original work (https://github.com/stemkoski/stemkoski.github.com/blob/master/Three.js/js/ParticleEngine.js).
@@ -662,7 +662,7 @@ SPE.shaderChunks = {
     uniforms: [
         'uniform float deltaTime;',
         'uniform float runTime;',
-        'uniform sampler2D texture;',
+        'uniform sampler2D textureUniform;',
         'uniform vec4 textureAnimation;',
         'uniform float scale;',
     ].join( '\n' ),
@@ -903,7 +903,7 @@ SPE.shaderChunks = {
         '    #endif',
 
         '',
-        '    vec4 rotatedTexture = texture2D( texture, vUv );',
+        '    vec4 rotatedTexture = texture2D( textureUniform, vUv );',
     ].join( '\n' )
 };
 
@@ -1917,7 +1917,7 @@ SPE.Group = function( options ) {
 
     // Map of uniforms to be applied to the ShaderMaterial instance.
     this.uniforms = {
-        texture: {
+        textureUniform: {
             type: 't',
             value: this.texture
         },
@@ -1932,7 +1932,7 @@ SPE.Group = function( options ) {
         },
         fogColor: {
             type: 'c',
-            value: null
+            value: this.fog ? new THREE.Color() : null
         },
         fogNear: {
             type: 'f',
