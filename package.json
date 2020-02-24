@@ -32,7 +32,8 @@
     "grunt-jsdoc": "^1.0.0"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "build": "grunt"
   },
   "main": "build/SPE.min.js",
   "directories": {
